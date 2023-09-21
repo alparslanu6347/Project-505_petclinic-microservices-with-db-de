@@ -74,6 +74,19 @@
         </dependencies>
     </dependencyManagement>
 
+<distributionManagement>
+  <repository>
+    <id>nexus</id>
+    <name>maven-releases</name> <!--Çalıştığın branch releases ise, yani kod hazır ise buraya gönder-->
+    <url>http://172.31.72.98:8081/repository/maven-releases/</url> <!--Nexus-server Private IP değiştir-->
+  </repository>
+  <snapshotRepository>
+    <id>nexus</id>
+    <name>maven-snapshots</name>  <!--Çalıştığın branch snapshots ise, yani halen üzerinde çalışıyorsan buraya gönder-->
+    <url>http://172.31.72.98:8081/repository/maven-snapshots/</url> <!--Nexus-server Private IP değiştir-->
+  </snapshotRepository>
+</distributionManagement>
+
     <profiles>
         <profile>
             <id>springboot</id>
