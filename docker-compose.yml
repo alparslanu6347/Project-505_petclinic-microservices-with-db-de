@@ -93,7 +93,7 @@ services:
     ports:
      - 7979:7979
 
-  ## Grafana / Prometheus
+  ## Grafana & Prometheus
 
   grafana-server:
     build: ./docker/grafana
