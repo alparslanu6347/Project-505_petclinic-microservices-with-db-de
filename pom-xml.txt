@@ -1,0 +1,33 @@
+-------------------------------------------------------------pom.xml--------------------------------------------------------------------
+pom.xml, bir Apache Maven projesinin yapılandırmasını ve bağımlılıklarını tanımlayan XML tabanlı bir dosyadır. "POM" veya "Project Object Model" kısaltmasıyla anılan bu dosya, Maven'in proje yönetimi ve bağımlılık yönetimi için temel belgedir. pom.xml dosyası aşağıdaki gibi önemli bilgileri içerir:
+
+Proje Bilgileri:
+
+groupId: Projenin ait olduğu grup veya organizasyonun tanımlandığı kısım.
+artifactId: Proje veya modülün benzersiz tanımlayıcısı.
+version: Projenin sürüm numarası.
+Bağımlılıklar: Projenin kullanacağı dış bağımlılıkların tanımlandığı bölüm. Maven, bu bağımlılıkları otomatik olarak çözer ve projenizin derlenmesi ve çalıştırılması için gerekli olan kütüphaneleri indirir.
+
+Proje Yapılandırması: Projenin derleme, paketleme ve test çalıştırma gibi yapılandırma ayarlarının tanımlandığı bölüm. Bu ayarlar, projenin nasıl derleneceği ve paketleneceği gibi inşa süreçlerini kontrol eder.
+
+Eklentiler (Plugins): Proje için özel Maven eklentilerinin ve yapılandırmalarının tanımlandığı bölüm. Bu, özel inşa görevlerini veya işlemlerini projenize entegre etmenize olanak tanır.
+
+pom.xml dosyası, Maven komutlarının (örneğin, projenin derlenmesi, test edilmesi veya paketlenmesi) nasıl çalışacağını belirlemek için kullanılır. Bu dosya, projenizin bağımlılıklarını ve yapılandırmasını tutarlı ve tekrarlanabilir bir şekilde yönetmenize yardımcı olur. Ayrıca, Maven projesi ile ilgili önemli bilgileri belgelemek için kullanılır ve ekibiniz veya diğer geliştiricilerle işbirliği yapmanızı kolaylaştırır.
+
+
+-----------------
+
+pom.xml serves as an XML-based file that defines the configuration and dependencies of an Apache Maven project. It stands for "Project Object Model" or "POM," and it is the fundamental document for Maven's project and dependency management. The pom.xml file contains the following key information:
+
+Project Information:
+
+groupId: Identifies the group or organization to which the project belongs.
+artifactId: Serves as the unique identifier for the project or module.
+version: Specifies the project's version number.
+Dependencies: This section defines the external dependencies that the project will use. Maven automatically resolves these dependencies and downloads the required libraries for compiling and running your project.
+
+Project Configuration: This is the section where configuration settings for the project are defined, such as how the project should be built, packaged, and run. These settings control the build processes of the project.
+
+Plugins: This section allows you to specify Maven plugins and their configurations for the project. It enables you to integrate custom build tasks or processes into your project.
+
+The pom.xml file is used to determine how Maven commands (e.g., compiling the project, running tests, or packaging it) will function. It ensures the consistent and repeatable management of your project's dependencies and configuration. Additionally, it serves as documentation for important project details and facilitates collaboration with your team or other developers.
