@@ -1,0 +1,78 @@
+https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#a-build-lifecycle-is-made-up-of-phases
+
+------------------------------------------mvnw clean install-----------------------------------------------------------------------------
+https://maven.apache.org/wrapper/
+
+The command mvnw clean install is typically used in Java projects that use the Maven build tool. This command performs the following tasks:
+
+mvnw: This is a script that stands for "Maven Wrapper." It's used to ensure that you're using a specific version of Maven for your project, even if that version is not installed on your system. The Maven Wrapper script is included in the project and helps maintain consistency across different development environments.
+
+clean: This is a Maven goal that is part of the Maven build lifecycle. The clean goal removes the target directory and all its contents, effectively cleaning up any previously built artifacts.
+
+install: This is another Maven goal. The install goal is used to compile the source code, run tests, and package the project's artifacts (usually JAR files) into the local Maven repository. These artifacts can then be used as dependencies in other Maven projects.
+
+So, when you run mvnw clean install, you are essentially telling Maven to:
+
+Clean up the existing build artifacts and target directory.
+Compile the source code.
+Run tests (if any are defined in the project).
+Package the project's artifacts.
+Install the project's artifacts into your local Maven repository.
+This command is commonly used during the development and build process of Java projects managed with Maven. It ensures that your project is built from a clean state, and the resulting artifacts are available for use by other projects or modules within the same build.
+
+---------------------------------------------------MAVEN WRAPPER NEDEN KULLANIRIZ--------------------------------------
+
+
+Maven Wrapper, Maven projelerinde Maven'in belirli bir sürümünü kullanmak için kullanılan bir araçtır. Maven Wrapper, projenin kök dizinine eklenen özel bir betik ve birkaç dosya ile gelir. Bu betik ve dosyalar, projenin herkes tarafından aynı Maven sürümünü kullanmasını sağlar ve bu nedenle projenin bağımlılıklarının ve yapılandırmasının tutarlılığını sağlar. İşte Maven Wrapper'ın neden kullanıldığı bazı nedenler:
+
+Sürüm Uyuşmazlıklarını Önler: Farklı geliştiricilerin veya hatta farklı makinelerin farklı Maven sürümlerini kullanması, projenin tutarlılığını bozabilir. Maven Wrapper, her zaman projenin belirli bir Maven sürümü ile çalışmasını sağlar.
+
+Yükleme İşlemi Kolaylaştırır: Maven Wrapper ile birlikte gelen betik ve dosyalar, projenin Maven sürümünü otomatik olarak indirir ve kullanmaya başlar. Bu, geliştiricilerin veya CI/CD sistemlerinin Maven'i önceden yüklemesine gerek kalmadan projeyi çalıştırabilmesini sağlar.
+
+Cross-Platform Desteği: Maven Wrapper, farklı işletim sistemlerinde (Windows, Linux, macOS vb.) çalışabilir ve herhangi bir Maven sürümünü kullanmak için tek bir betikle uğraşmanızı sağlar.
+
+Projeyi Taşıma Kolaylığı: Maven Wrapper, projenizi başka bir makineye veya sunucuya taşırken Maven sürümü uyumluluğu sorunları yaşamadan projeyi çalıştırmanıza yardımcı olur.
+-------
+Maven Wrapper'ı kullanmak, projenizin daha taşınabilir, daha kolay bakım yapılabilir ve daha güvenilir olmasına yardımcı olabilir. Projeyi Maven Wrapper ile başlatmak ve çalıştırmak için projenizin kök dizinindeki mvnw (Unix/Linux) veya mvnw.cmd (Windows) betiğini kullanabilirsiniz. Örneğin, ./mvnw clean install (Unix/Linux) veya mvnw.cmd clean install (Windows) gibi komutlarla projenizi derleyebilir ve çalıştırabilirsiniz. Bu komutlar otomatik olarak doğru Maven sürümünü indirip kullanacaktır.
+
+
+Maven Wrapper is a tool used in Maven projects to specify a particular version of Maven to use. Maven Wrapper comes with a custom script and a few files added to the project's root directory. These script and files ensure that everyone working on the project uses the same Maven version, thus maintaining consistency in the project's dependencies and configuration. Here are some reasons why Maven Wrapper is used:
+
+Prevents Version Mismatches: Different developers or even different machines using different Maven versions can lead to inconsistency in the project. Maven Wrapper ensures that the project always works with a specific Maven version.
+
+Simplifies Installation: The script and files that come with Maven Wrapper automatically download and use the specified Maven version, allowing developers or CI/CD systems to run the project without the need to pre-install Maven.
+
+Cross-Platform Support: Maven Wrapper can work on various operating systems (Windows, Linux, macOS, etc.), making it easier to deal with a single script to use any Maven version.
+
+Portability: Using Maven Wrapper helps ensure that the project can be moved to another machine or server without compatibility issues related to Maven versions.
+
+Using Maven Wrapper can make your project more portable, easier to maintain, and more reliable.
+------------------------------------------------mvn yerine mvnw--------------------------------------------------------------------
+
+`mvn` komutunu direkt olarak kullanmak istesek her bir ec2-instance içerisine `maven` kurmak zorundayız. Üstelik maven versiyon değişikliğinde, yeni ec2-instance gerektiği veya  yeni developer geldiğinde yeniden maven'in en güncel versiyonunu yüklemek zorunda kalırız.
+Maven'ın en önemli özelliği zaten versiyon kontrol sağlaması, ama biz daha maven'ın versiyonunu ayarlayamaz hale geliriz.
+
+------
+If you want to use the mvn command directly, you would need to install Maven on each EC2 instance individually. Additionally, when there's a change in Maven version or when a new developer joins the team, you would have to install the latest version of Maven on each instance separately.
+"Version control is indeed one of the most important features of Maven, but it's ironic that we can sometimes find ourselves unable to control the version of Maven itself."
+
+
+-----------------------------------------------
+
+By using Maven Wrapper, there's no need for each developer or CI/CD system to pre-install Maven or manage a specific version of Maven for the project. This approach ensures greater consistency in managing project dependencies and configurations and simplifies the process of getting new developers or machines up and running with the project.
+
+When each developer uses Maven Wrapper to start the project, the Maven Wrapper script (mvnw) in the project's root directory automatically downloads and uses the correct Maven version. This eliminates the need to manually install or configure the same Maven version to run the project.
+
+Additionally, when changes or updates to the Maven version are required, the project's mvnw or mvnw.cmd script can automatically download a new Maven version using the .mvn/wrapper/maven-wrapper.properties file located in the project's root directory. This makes transitioning to a new Maven version easier and smoother.
+
+In conclusion, using Maven Wrapper is an effective method for maintaining consistent project dependencies and Maven versions, enhancing project portability. Therefore, it is recommended to use Maven Wrapper when developing a Maven project.
+
+
+
+Maven Wrapper, bu tür sorunları önlemek için özellikle yararlıdır. Maven Wrapper'ı kullanarak, her bir geliştiricinin veya CI/CD sistemlerinin Maven'i önceden yüklemesi veya projeye özel bir Maven sürümünü kullanması gerekmez. Bu, projenin bağımlılıklarını ve yapılandırmasını daha tutarlı hale getirir ve yeni geliştiricilerin veya makinelerin projeyi başlatmasını kolaylaştırır.
+
+Her bir geliştirici, Maven Wrapper ile projeyi başlattığında, projenin kök dizinindeki Maven Wrapper betiği (mvnw) otomatik olarak doğru Maven sürümünü indirir ve kullanır. Bu sayede projeyi başlatmak için aynı Maven sürümünü manuel olarak yüklemek veya ayarlamak gerekmez.
+
+Ayrıca, Maven sürümü değişiklikleri veya güncellemeleri gerektiğinde, projenin mvnw veya mvnw.cmd dosyası, projenin kök dizinindeki .mvn/wrapper/maven-wrapper.properties dosyasını kullanarak yeni bir Maven sürümünü otomatik olarak indirebilir. Bu nedenle yeni bir Maven sürümüne geçmek daha kolay ve sorunsuz olur.
+
+Sonuç olarak, Maven Wrapper kullanmak, projenin bağımlılıklarını ve Maven sürümünü tutarlı bir şekilde yönetmek için etkili bir yöntemdir ve projenin taşınabilirliğini artırır. Bu nedenle, bir Maven projesi geliştirirken Maven Wrapper kullanmanız önerilir.
