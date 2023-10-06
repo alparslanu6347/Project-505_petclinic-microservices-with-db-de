@@ -1,0 +1,16 @@
+
+-----------------------------------------------------DOCKER INSTALL---------------------------------------------------------------------------------
+sudo dnf install docker -y	  : This command installs the Docker package using DNF package manager. The -y flag is used to automatically confirm the installation.
+
+sudo systemctl start docker	  : This command starts the Docker service.
+
+sudo systemctl enable docker	  : This command enables Docker to start automatically at boot.
+
+sudo usermod -a -G docker ec2-user: This adds the "ec2-user" (your current user) to the "docker" group. This allows you to run Docker commands without needing to use "sudo."
+
+newgrp docker			  : This command is used to apply group changes to your current session without having to log out and log back in. It makes sure that your new group membership (in this case, the "docker" group) takes effect immediately.
+
+After running these commands, you should be able to use Docker commands without using "sudo" for the current session. Keep in mind that for these changes to take effect, you may need to log out and log back in or start a new shell session.
+
+----------------------------------------------------DOCKERFILE--------------------------------------------------------------------------------------
+
